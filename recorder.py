@@ -5,16 +5,12 @@ import wavio
 
 
 frequency = 44100
-
 duration = 5
-
 recording = sounddevice .rec(int(duration * frequency),
 				samplerate=frequency, channels=2)
-
 sounddevice .wait()
 #using scipy
 write("sc-recording.wav", frequency, recording)
-
 #using wavio
 wavio.write("wavio-recording.wav", recording, frequency, sampwidth=2)
 
